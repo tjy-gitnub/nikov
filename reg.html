@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" style="background: url(bg.svg) center;background-size: cover;background-attachment: fixed;background-color: #dce3f3;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 尼科夫在线工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="height:100%;background: none;display: flex;justify-content: center;">
+    <div class="box card" style="width: 40%;position: absolute;top:calc(50% - 125px);height: 250px;min-width: 500px;margin: 0;">
+        <p class="tit">注册</p>
+        <div class="body" style="padding: 20px;">
+            <div style="display: flex;">
+                <p style="width: 50px;margin: 0;padding: 5px 0;">电话</p>
+                <div id="telephone" class="inp" style="flex-grow: 1;user-select:none;">10000000000</div>
+            </div>
+            <input type="range" min="10000000000" max="19999999999" step="1" style="width: 100%;" onchange="$('#telephone').text($(this).val())" value="10000000000">
+            <p>已有账号?<a href="login.html" class="jump">登录</a></p>
+            <loading style="position: absolute;right: 80px;bottom: 10px;opacity: 0;transition: 100ms;" id="loading">
+                <svg width="28px" height="28px" viewBox="0 0 16 16"><circle cx="8px" cy="8px" r="7px"></circle><circle cx="8px" cy="8px" r="6px"></circle></svg>
+            </loading>
+            <a class="btn" style="position: absolute;right: 10px;bottom: 10px;" onclick="$('#loading').css('opacity',1);setTimeout(() => {window.location='password.html'}, 2000);">继续</a>
+        </div>
+    </div>
+    <script src="../tapple/jq.min.js"></script>
+    <script src="../tapple/scroll.js"></script>
+</body>
+</html>

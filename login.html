@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" style="background: url(bg.svg) center;background-size: cover;background-attachment: fixed;background-color: #dce3f3;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 尼科夫在线工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="height:100%;background: none;display: flex;justify-content: center;">
+    <div class="box card" style="width: 40%;position: absolute;top:calc(50% - 125px);height: 250px;min-width: 500px;margin: 0;">
+        <p class="tit">登录</p>
+        <div class="body" style="padding: 0px 20px 20px 20px;">
+            <p id="error" style="color:red;margin: 0;opacity: 0;transition: 100ms;">此电话尚未注册</p>
+            <div style="display: flex;">
+                <p style="width: 50px;margin: 0;padding: 5px 0;">电话</p>
+                <input id="telephone" class="inp" style="flex-grow: 1;">
+            </div>
+            <div style="display: flex;margin-top: 5px;">
+                <p style="width: 50px;margin: 0;padding: 5px 0;">密码</p>
+                <input id="pass" type="password" class="inp" style="flex-grow: 1;">
+            </div>
+            <p>没有账号?<a href="reg.html" class="jump">注册</a></p>
+            <loading style="position: absolute;right: 80px;bottom: 10px;opacity: 0;transition: 100ms;" id="loading">
+                <svg width="28px" height="28px" viewBox="0 0 16 16"><circle cx="8px" cy="8px" r="7px"></circle><circle cx="8px" cy="8px" r="6px"></circle></svg>
+            </loading>
+            <a class="btn" style="position: absolute;right: 10px;bottom: 10px;" onclick="$('#loading').css('opacity',1);setTimeout(() => {$('#loading').css('opacity',0);$('#error').css('opacity',1);}, 2000);">登录</a>
+        </div>
+    </div>
+    <script src="../tapple/jq.min.js"></script>
+    <script src="../tapple/scroll.js"></script>
+</body>
+</html>

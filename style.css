@@ -1,0 +1,127 @@
+@import url('../tapple/main.css');
+
+.card {
+    backdrop-filter: blur(15px);
+    background-color: #ffffff70 !important;
+}
+
+.btn {
+    display: block;
+    background-color: #7f7f7f50;
+    border-radius: 7px;
+    text-align: center;
+    padding: 7px 15px;
+    color: #000;
+    transition: 70ms;
+    cursor: pointer;
+    width: max-content;
+    user-select: none;
+}
+
+.btn:hover {
+    filter: brightness(1.4);
+}
+
+.btn:active {
+    filter: brightness(0.7);
+    transform: scale(0.92);
+}
+
+.jump {
+    cursor: pointer;
+    color: #2983cc;
+}
+
+.jump:hover {
+    color: #999;
+}
+
+.jump:active {
+    color: #666;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background: #fff;
+    border-radius: 5px;
+    height: 5px;
+    background: linear-gradient(90deg, #bad8fd, #e9a6a8);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    position: relative;
+    width: 10px;
+    height: 20px;
+    background: #2983cc;
+    border-radius: 3px;
+    transition: 50ms;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    filter: brightness(1.4);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+    filter: brightness(0.8);
+    transform: scale(0.85);
+}
+
+#password{
+    -webkit-text-security: disc !important;
+}
+
+.inp {
+    background-color: #ffffff90;
+    border-radius: 7px;
+    width: 100%;
+    height: 32px;
+    border: 2px solid #88888880;
+    padding: 0 10px;
+    cursor: text;
+    outline: none;
+}
+
+.inp:focus{
+    border-color: #2983cc;
+}
+
+loading>svg>circle:first-child {
+    stroke: #2983cc;
+    fill: none;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    animation: spin-infinite 2s linear 0s infinite normal none running;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    transition: all .2s ease-in-out 0s
+}
+loading>svg>circle:last-child{
+    fill: #00000000!important;
+}
+loading>svg{
+    width:min-content;
+    height: min-content;
+  background-color: #00000000;
+  border-radius: 50%;
+}
+
+@keyframes spin-infinite {
+    0% {
+        stroke-dasharray: .01px, 43.97px;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    50% {
+        stroke-dasharray: 21.99px, 21.99px;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg)
+    }
+
+    to {
+        stroke-dasharray: .01px, 43.97px;
+        -webkit-transform: rotate(3turn);
+        transform: rotate(3turn)
+    }
+}
