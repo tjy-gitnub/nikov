@@ -15,12 +15,12 @@
                 <p style="width: 50px;margin: 0;padding: 5px 0;">电话</p>
                 <div id="telephone" class="inp" style="flex-grow: 1;user-select:none;">10000000000</div>
             </div>
-            <input type="range" min="10000000000" max="19999999999" step="1" style="width: 100%;" onchange="$('#telephone').text($(this).val())" value="10000000000">
+            <input type="range" min="10000000000" max="19999999999" step="1" style="width: 100%;" onchange="$('#telephone').text($('input[type=range][value=10000000000]').val())" value="10000000000">
             <p>已有账号?<a href="login.html" class="jump">登录</a></p>
             <loading style="position: absolute;right: 80px;bottom: 10px;opacity: 0;transition: 100ms;" id="loading">
                 <svg width="28px" height="28px" viewBox="0 0 16 16"><circle cx="8px" cy="8px" r="7px"></circle><circle cx="8px" cy="8px" r="6px"></circle></svg>
             </loading>
-            <a class="btn" style="position: absolute;right: 10px;bottom: 10px;" onclick="$('#loading').css('opacity',1);setTimeout(() => {window.location='password.html'}, 2000);">继续</a>
+            <a class="btn" style="position: absolute;right: 10px;bottom: 10px;" onclick="$('#loading').css('opacity',1);setTimeout(() => {window.location='robot.html'}, 200);">继续</a>
         </div>
     </div>
     <script src="../tapple/jq.min.js"></script>

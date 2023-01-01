@@ -46,6 +46,7 @@ input[type="range"] {
     border-radius: 5px;
     height: 5px;
     background: linear-gradient(90deg, #bad8fd, #e9a6a8);
+    outline: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {

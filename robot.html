@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" style="background: url(bg.svg) center;background-size: cover;background-attachment: fixed;background-color: #dce3f3;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 尼科夫在线工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="height:100%;background: none;display: flex;justify-content: center;">
+    <script src="../tapple/jq.min.js"></script>
+    <div class="box card" style="position: absolute;top:calc(50% - 325px);height: 650px;width: 500px;left: calc(50% - 250px);margin: 0;">
+        <p class="tit">验证</p>
+        <div class="body" style="padding: 0 20px;">
+            <p style="margin: 10px 0;">调整滑块至图片空缺处</p>
+            <div style="width: 400px;height: 400px;margin-left: 10px;background: url(c.jpg);background-size: cover;border-radius: 7px;" id="pic">
+                <div style="width: 100px;height: 100px;background: #000;position: relative;top: 100px;left: 200px;border-radius: 5px;"></div>
+                <div style="width: 100px;height: 100px;background: url(c.jpg) -200px -100px;background-size: 400px 400px;position: relative;left: 0px;border-radius: 5px;" id="hk"></div>
+            </div>
+            <input id="inp" type="range" style="width: 100%;" min="-50" max="50" value="0" oninput="$('#pic').css('transform',`rotate(${-this.value}deg)`)">
+            <p id="info" style="margin: 10px 0 0 0;"></p>
+            <script>
+                function change(params) {
+                    let x=parseFloat($('#hk').css('left'))-($('#inp').val()/5);
+                    $('#info').html(`调整完毕后保持平衡<br>容差 ±0.5px，当前还差 ${parseInt(Math.abs(parseFloat($('#hk').css('left'))-200)*10)/10} px`);
+                    if($('input#inp[type=range][value=0]').val()==0&&Math.abs(parseFloat($('#hk').css('left'))-200)<=0.5){
+                        $('#info').html(`<span style="color:#17c400;">验证通过，正在跳转</span>
+                        <loading style="position: absolute;margin-top:-2.5px;margin-left:10px;">
+                            <svg width="28px" height="28px" viewBox="0 0 16 16"><circle cx="8px" cy="8px" r="7px"></circle><circle cx="8px" cy="8px" r="6px"></circle></svg>
+                        </loading>`);
+                        clearInterval(iid);
+                        setTimeout(() => {
+                            window.location='password.html';
+                        }, 200);
+                        return;
+                    }
+                    if(0<=x && x<=300){
+                        $('#hk').css('left',x);
+                        return;
+                    }else if(x<0)
+                        $('#hk').css('left',0);
+                    else if(300<x)
+                        $('#hk').css('left',300);
+                }
+                let iid=setInterval(change, 10);
+            </script>
+        </div>
+    </div>
+    <script src="../tapple/scroll.js"></script>
+</body>
+</html>
